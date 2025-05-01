@@ -39,7 +39,7 @@ export default function AboutMe(): JSX.Element {
               className="w-[100px] flex flex-col items-center text-white"
             >
               <img
-                className="w-[60px] h-[60px] object-contain"
+                className="w-[60px] h-[60px] object-contain hover:scale-110 transition-transform duration-200"
                 src={tech.src}
                 alt={`${tech.name} Logo`}
               />

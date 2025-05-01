@@ -6,7 +6,7 @@ import { GrDocument } from 'react-icons/gr'
 export default function Contact(): JSX.Element {
   return (
     <section className="h-[calc(90vh-100px)] flex flex-col justify-center items-center text-white text-center">
-      <h2 className="text-4xl md:text-6xl font-bold pb-20">Contact Me:</h2>
+      {/* <h2 className="text-4xl md:text-6xl font-bold pb-20">Contact Me:</h2> */}
       <div className="flex flex-row gap-6">
         <a href="">
           <GrDocument className="text-6xl hover:text-yellow-400 transition-colors hover:scale-110 transition-transform duration-200" />
