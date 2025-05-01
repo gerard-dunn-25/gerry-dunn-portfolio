@@ -1,6 +1,5 @@
 import React, { JSX } from 'react'
 import Home from './Home'
-import Footer from './Footer'
 import AboutMe from './AboutMe'
 import Projects from './Projects'
 import Contact from './Contact'
@@ -23,23 +22,3 @@ export default function Hero(): JSX.Element {
     </>
   )
 }
-
-// import React, { JSX } from 'react'
-// import Home from './Home'
-// import AboutMe from './AboutMe'
-// import Projects from './Projects'
-// import Contact from './Contact'
-
-// export default function Hero(): JSX.Element {
-//   return (
-//     <div className="overflow-y-auto max-h-screen pb-20">
-//       {/* border container */}
-//       <div className="border-2 border-white p-8 mx-auto max-w-screen-lg">
-//         <Home />
-//         <AboutMe />
-//         <Projects />
-//         <Contact />
-//       </div>
-//     </div>
-//   )
-// }

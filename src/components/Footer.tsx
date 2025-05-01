@@ -1,13 +1,3 @@
-// import React, { JSX } from 'react'
-
-// export default function Footer(): JSX.Element {
-//   return (
-//     <footer className="text-center text-gray-400 w-full fixed bottom-0 py-4">
-//       © 2025 Gerry Dunn.
-//     </footer>
-//   )
-// }
-
 import React, { JSX } from 'react'
 
 export default function Footer(): JSX.Element {
