@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function Contact(): JSX.Element {
   return (
-    <section className="text-center mt-12 text-white">
+    <section className="h-[calc(50vh-100px)] text-center mt-12 text-white">
       <h2 className="text-4xl font-bold text-center text-white pb-8">
         Contact Me
       </h2>
