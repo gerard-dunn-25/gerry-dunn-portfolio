@@ -3,7 +3,7 @@ import React, { JSX } from 'react'
 export default function Projects(): JSX.Element {
   return (
     <>
-      <div>
+      <div className="h-[calc(95vh-100px)] flex flex-col ">
         <h1 className="text-4xl font-bold text-center text-white">Projects</h1>
         <div>
           <h1 className="text-4xl font-bold text-center text-white">
