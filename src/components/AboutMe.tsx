@@ -11,7 +11,7 @@ export default function AboutMe(): JSX.Element {
             alt="Gerry Dunn"
           />
         </div>
-        <h1 className="text-4xl font-bold text-center text-white">About Me</h1>
+        <h1 className="text-6xl font-bold text-center text-white">About Me</h1>
         <p className="text-xl md:text-2xl text-center text-white max-w-2xl mx-auto mt-4 pb-8">
           I’m Gerry, a creatively minded individual new to software development
           and eager to dive into new and exciting opportunities. I have
@@ -20,7 +20,7 @@ export default function AboutMe(): JSX.Element {
           nice, so where better to begin than with visual design.
         </p>
 
-        <h1 className="text-4xl font-bold text-center text-white mt-8">
+        <h1 className="text-6xl font-bold text-center text-white mt-8 pb-4">
           Technologies
         </h1>
         <div className="flex flex-wrap justify-center gap-8 mt-6 pb-40">
