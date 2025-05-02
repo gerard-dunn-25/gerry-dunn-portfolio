@@ -14,7 +14,7 @@ export default function Home(): JSX.Element {
         </div>
         <div className="mt-6 md:mt-0">
           <img
-            src="/Gerry.jpg"
+            src="/images/Home/Gerry.jpg"
             alt="Gerry Dunn"
             className="w-60 h-60 md:w-80 md:h-80 rounded-full border-4 border-white object-cover"
           />

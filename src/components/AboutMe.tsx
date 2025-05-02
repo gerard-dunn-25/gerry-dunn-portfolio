@@ -7,7 +7,7 @@ export default function AboutMe(): JSX.Element {
         <div className="group">
           <img
             className="md:w-[25%] mx-auto pt-10 mb-4 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-1 group-hover:animate-glow-pulse"
-            src={'/TransparentCommissionGerrySplitFace.png'}
+            src={'/images/AboutMe/TransparentCommissionGerrySplitFace.png'}
             alt="Gerry Dunn"
           />
         </div>
@@ -25,14 +25,23 @@ export default function AboutMe(): JSX.Element {
         </h1>
         <div className="flex flex-wrap justify-center gap-8 mt-6 pb-40">
           {[
-            { name: 'JavaScript', src: '/JavaScript.png' },
-            { name: 'TypeScript', src: '/TypeScript.png' },
-            { name: 'React', src: '/React.png' },
-            { name: 'Node.js', src: '/NodeJS.png' },
-            { name: 'Figma', src: '/Figma.png' },
-            { name: 'TailwindCSS', src: '/TailwindCSS.png' },
-            { name: 'HTML', src: '/HTML.png' },
-            { name: 'CSS', src: '/CSS.png' },
+            {
+              name: 'JavaScript',
+              src: '/images/AboutMe/Technologies/JavaScript.png',
+            },
+            {
+              name: 'TypeScript',
+              src: '/images/AboutMe/Technologies/TypeScript.png',
+            },
+            { name: 'React', src: '/images/AboutMe/Technologies/React.png' },
+            { name: 'Node.js', src: '/images/AboutMe/Technologies/NodeJS.png' },
+            { name: 'Figma', src: '/images/AboutMe/Technologies/Figma.png' },
+            {
+              name: 'TailwindCSS',
+              src: '/images/AboutMe/Technologies/TailwindCSS.png',
+            },
+            { name: 'HTML', src: '/images/AboutMe/Technologies/HTML.png' },
+            { name: 'CSS', src: '/images/AboutMe/Technologies/CSS.png' },
           ].map((tech) => (
             <div
               key={tech.name}
