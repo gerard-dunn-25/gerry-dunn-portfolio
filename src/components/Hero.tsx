@@ -10,7 +10,7 @@ export default function Hero(): JSX.Element {
       <section id="home">
         <Home />
       </section>
-      <section id="about">
+      <section id="aboutme">
         <AboutMe />
       </section>
       <section id="projects">

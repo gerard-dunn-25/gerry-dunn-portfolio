@@ -8,7 +8,11 @@ export default function Contact(): JSX.Element {
     <section className="h-[calc(85vh)] flex flex-col justify-center items-center text-white text-center">
       {/* <h2 className="text-4xl md:text-6xl font-bold pb-20">Contact Me:</h2> */}
       <div className="flex flex-row gap-6">
-        <a href="">
+        <a
+          href="/Gerard Dunn CV 2025.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GrDocument className="text-6xl hover:text-yellow-400 transition-colors hover:scale-110 transition-transform duration-200" />
         </a>
         <h2 className="text-4xl font-bold pb-20">Resume</h2>
