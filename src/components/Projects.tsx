@@ -42,7 +42,7 @@ const projects = [
   {
     title: 'Todo List',
     images: ['/images/Projects/Todo List/1.todo-home.png'],
-    tech: ['React', 'TypeScript', 'Express', 'SQLite3', 'CSS', 'Knex.js'],
+    tech: ['React', 'TypeScript', 'Express', 'SQLite3', 'CSS'],
     description: `This was the first full stack app that we developed, completing back-end functions and rendering the information on the front end. This app features CRUD operations with the ability to add and delete a specific task.`,
     subDescription: `While we were working from a template provided, we were able to style the list in whichever way we saw fit. I chose to change the colour of a list item to red assuming it was incomplete with the intention to turn it green and cross it out if it had been completed.`,
     github: 'https://github.com/gerard-dunn-25',
