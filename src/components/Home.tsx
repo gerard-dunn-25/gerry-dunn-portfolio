@@ -2,7 +2,7 @@ import React, { JSX } from 'react'
 
 export default function Home(): JSX.Element {
   return (
-    <div className="h-[calc(95vh-100px)] flex flex-col justify-center relative overflow-hidden">
+    <div className="h-[calc(85vh)] flex flex-col justify-center relative overflow-hidden">
       <section className="flex flex-col md:flex-row items-center justify-center gap-x-8 px-4">
         <div className="max-w-xl text-center md:text-left">
           <h1 className="text-4xl md:text-8xl font-bold mb-2">Hey!</h1>
