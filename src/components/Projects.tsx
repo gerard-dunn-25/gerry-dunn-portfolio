@@ -39,18 +39,18 @@ const projects = [
     subDescription: `We also sourced  our own interesting facts about each film that we intended to have cycle through at the bottom of the page at first, but did not have enough time to complete as it was a one day build so the information is currently static.`,
     github: 'https://github.com/gerard-dunn-25/Studio-Ghibli-Fan-Wiki',
   },
-  {
-    title: 'Todo List',
-    images: [
-      '/images/Projects/Todo List/1.list.png',
-      '/images/Projects/Todo List/2.list-with-completes.png',
-      '/images/Projects/Todo List/3.list-incomplete-selected.png',
-    ],
-    tech: ['React', 'TypeScript', 'Express', 'SQLite3', 'CSS'],
-    description: `This was the first full stack app that we developed, completing back-end functions and rendering the information on the front end. This app features CRUD operations with the ability to add and delete a specific task.`,
-    subDescription: `While we were working from a template provided, we were able to style the list in whichever way we saw fit. I chose to change the colour of a list item to red assuming it was incomplete or turn it green and cross it out if it had been completed.`,
-    github: 'https://github.com/gerard-dunn-25/Todo-List',
-  },
+  // {
+  //   title: 'Todo List',
+  //   images: [
+  //     '/images/Projects/Todo List/1.list.png',
+  //     '/images/Projects/Todo List/2.list-with-completes.png',
+  //     '/images/Projects/Todo List/3.list-incomplete-selected.png',
+  //   ],
+  //   tech: ['React', 'TypeScript', 'Express', 'SQLite3', 'CSS'],
+  //   description: `This was the first full stack app that we developed, completing back-end functions and rendering the information on the front end. This app features CRUD operations with the ability to add and delete a specific task.`,
+  //   subDescription: `While we were working from a template provided, we were able to style the list in whichever way we saw fit. I chose to change the colour of a list item to red assuming it was incomplete or turn it green and cross it out if it had been completed.`,
+  //   github: 'https://github.com/gerard-dunn-25/Todo-List',
+  // },
 ]
 
 export default function Projects(): JSX.Element {
@@ -115,7 +115,7 @@ export default function Projects(): JSX.Element {
                   <img
                     src={img}
                     alt={`Project ${project.title} image ${i + 1}`}
-                    className="rounded cursor-pointer h-48 object-cover w-full max-w-[350px] hover:scale-105 transition-transform"
+                    className="rounded cursor-pointer h-auto object-contain w-full max-w-[350px] aspect-video hover:scale-105 transition-transform"
                     onClick={() => openImageModal(project.images, i)}
                   />
                 </div>
@@ -126,7 +126,7 @@ export default function Projects(): JSX.Element {
               <img
                 src={project.images[0]}
                 alt={`Project ${project.title} image`}
-                className="rounded cursor-pointer h-48 object-cover w-full max-w-[350px] hover:scale-105 transition-transform"
+                className="rounded cursor-pointer h-auto object-contain w-full max-w-[350px] aspect-video hover:scale-105 transition-transform"
                 onClick={() => openImageModal(project.images, 0)}
               />
             </div>
@@ -167,7 +167,7 @@ export default function Projects(): JSX.Element {
           <div className="relative" onClick={(e) => e.stopPropagation()}>
             <img
               src={activeImage}
-              className="w-[70vw] h-[70vh] object-cover rounded shadow-2xl"
+              className="w-[70vw] h-[70vh] object-contain rounded shadow-2xl"
               alt="Enlarged Project Image"
             />
             {activeImages.length > 1 && (
