@@ -20,7 +20,7 @@ export default function Home(): JSX.Element {
           />
         </div>
       </section>
-      <hr className="absolute bottom-0 left-1/2 transform -translate-x-1/2 border-white w-1/2" />
+      {/* <hr className="border-white w-1/2 mx-auto mb-4" /> */}
     </div>
   )
 }
