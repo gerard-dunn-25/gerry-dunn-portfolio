@@ -1,7 +1,9 @@
-import { JSX } from 'react'
-import { MdEmail } from 'react-icons/md'
+import { JSX, useState } from 'react'
+import { MdEmail, MdContentCopy, MdCheck } from 'react-icons/md'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { GrDocument } from 'react-icons/gr'
+
+const EMAIL = 'gerard.dunn.92@gmail.com'
 
 const links = [
   {
@@ -35,6 +37,15 @@ const links = [
 ]
 
 export default function Contact(): JSX.Element {
+  const [copied, setCopied] = useState(false)
+
+  function copyEmail() {
+    navigator.clipboard.writeText(EMAIL).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+
   return (
     <section
       className="flex flex-col items-center w-full"
@@ -47,6 +58,25 @@ export default function Contact(): JSX.Element {
         <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-accent)] mb-2 text-center">
           Get In Touch
         </p>
+        <hr className="border-[var(--color-accent)]/40 w-16 mx-auto mb-2" />
+
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-accent)]">
+            {EMAIL}
+          </p>
+          <button
+            onClick={copyEmail}
+            aria-label="Copy email address"
+            className="text-[var(--color-accent)] opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
+          >
+            {copied ? (
+              <MdCheck className="text-sm" />
+            ) : (
+              <MdContentCopy className="text-sm" />
+            )}
+          </button>
+        </div>
+
         <hr className="border-[var(--color-accent)]/40 w-16 mx-auto mb-12" />
       </div>
 
