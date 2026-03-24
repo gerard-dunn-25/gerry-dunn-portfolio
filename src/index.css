@@ -1,13 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@variant dark (&:where(.dark, .dark *));
 
-body {
-  font-family: 'Rajdhani', sans-serif;
+:root {
+  --color-accent: #2d6e78;
+  --color-text: #1a2e30;
+  --color-text-muted: #3a5558;
+  --color-surface: rgba(255, 255, 255, 0.08);
+  --color-card: rgba(255, 255, 255, 0.4);
+  --color-border: rgba(45, 110, 120, 0.1);
+}
+
+.dark {
+  --color-accent: #c49a35;
+  --color-text: #f0e6c8;
+  --color-text-muted: #a89060;
+  --color-surface: rgba(0, 0, 0, 0.2);
+  --color-card: rgba(0, 0, 0, 0.4);
+  --color-border: rgba(196, 154, 53, 0.3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--color-text);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@utility animate-float {
+  animation: float 3s ease-in-out infinite;
 }

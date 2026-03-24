@@ -1,16 +1,13 @@
-import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from 'next-themes'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import App from './App'
+import './index.css'
 
-const container = document.getElementById('root')
-
-if (container) {
-  createRoot(container).render(
-    <React.StrictMode>
+createRoot(document.getElementById('root')!).render(
+  <BrowserRouter>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <App />
-    </React.StrictMode>
-  )
-} else {
-  throw new Error('Root container not found')
-}
+    </ThemeProvider>
+  </BrowserRouter>,
+)

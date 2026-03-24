@@ -1,19 +1,34 @@
-import React, { JSX } from 'react'
+import { Route } from 'react-router-dom'
+import { Routes, Navigate } from 'react-router'
+import { AnimatedBackground } from './components/AnimatedBackground'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
 import Footer from './components/Footer'
-import './index.css'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import Home from './pages/Home'
+import AboutMe from './pages/AboutMe'
+import Projects from './pages/Projects'
+import Contact from './pages/Contact'
 
-export default function App(): JSX.Element {
+export default function App() {
   return (
-    <div className="bg-gradient-to-b from-[#424242] to-[#000000] min-h-screen text-white font-futuristic relative">
-      <Navbar />
-      <div className="fixed top-[10%] bottom-16 left-8 right-8 border-2 border-white p-6 overflow-y-auto scroll-smooth z-10">
-        <Hero />
+    <>
+      <AnimatedBackground />
+      <div
+        className="relative min-h-screen flex flex-col"
+        style={{ zIndex: 10 }}
+      >
+        <Navbar />
+        <main className="flex-1 flex flex-col items-center">
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <div className="h-12" />
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   )
 }
