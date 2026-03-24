@@ -14,13 +14,6 @@ const links = [
     external: true,
   },
   {
-    label: 'Email',
-    href: 'mailto:gerard.dunn.92@gmail.com',
-    icon: MdEmail,
-    hoverClass: 'hover:text-red-400',
-    external: false,
-  },
-  {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/gerry-dunn/',
     icon: FaLinkedin,
@@ -33,6 +26,13 @@ const links = [
     icon: FaGithub,
     hoverClass: 'hover:text-green-400',
     external: true,
+  },
+  {
+    label: 'Email',
+    href: 'mailto:gerard.dunn.92@gmail.com',
+    icon: MdEmail,
+    hoverClass: 'hover:text-red-400',
+    external: false,
   },
 ]
 
