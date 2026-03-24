@@ -807,10 +807,13 @@ export function useAnimatedBackground(
       spawnRipple(t.clientX, t.clientY, 1.0)
     }
 
+    let lastScrollRipple = 0
+
     function onScroll() {
-      const delta = window.scrollY - lastScroll
+      const now = performance.now()
+      if (now - lastScrollRipple < 2000) return
+      lastScrollRipple = now
       lastScroll = window.scrollY
-      void delta
       spawnRipple(W / 2, H / 2, 0.4)
     }
 
