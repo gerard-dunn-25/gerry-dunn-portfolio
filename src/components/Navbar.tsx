@@ -94,6 +94,9 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--color-border)] backdrop-blur-sm bg-[var(--color-surface)]">
         {/* Main bar */}
         <div className="flex items-center justify-between px-8 py-4">
+          {/* Invisible spacer to balance the toggle */}
+          <div className="hidden md:block w-32 shrink-0" />
+
           {/* Desktop links */}
           <div className="hidden md:flex flex-1 justify-center items-center gap-8 sm:gap-12 md:gap-16 font-mono tracking-widest uppercase text-sm md:text-base">
             {links.map(({ label, to }) => (
