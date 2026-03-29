@@ -52,7 +52,7 @@ export default function Contact(): JSX.Element {
       style={{ height: 'calc(100dvh - 340px)' }}
     >
       <div className="pt-20 w-full max-w-md mx-auto px-4">
-        <h2 className="font-serif text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-4 text-center">
+        <h2 className="font-serif text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-10 text-center">
           Contact
         </h2>
 
