@@ -1,4 +1,5 @@
 import { JSX, useState, useEffect, useRef } from 'react'
+import { useTheme } from 'next-themes'
 
 const technologies = [
   {
@@ -81,6 +82,14 @@ export default function AboutMe(): JSX.Element {
   const animFrameRef = useRef<number>(null)
   const startTimeRef = useRef<number>(null)
   const exitStartRef = useRef<{ y: number; time: number } | null>(null)
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
+  const portrait =
+    !mounted || resolvedTheme === 'dark'
+      ? '/images/AboutMe/Comission_Gerry_Split_Face2.svg'
+      : '/images/AboutMe/Comission_Gerry_Split_Face1.svg'
 
   const currentYRef = useRef(0)
 
@@ -131,7 +140,7 @@ export default function AboutMe(): JSX.Element {
       {/* Portrait */}
       <div className="flex justify-center mb-10">
         <img
-          src="/images/AboutMe/TransparentCommissionGerrySplitFace.png"
+          src={portrait}
           alt="Gerry Dunn"
           className="w-64 sm:w-72 md:w-80 lg:w-96"
           style={{ transform: `translateY(${translateY}px)` }}
@@ -140,53 +149,55 @@ export default function AboutMe(): JSX.Element {
         />
       </div>
 
-      {/* Heading */}
-      <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-6">
-        About Me
-      </h2>
       <hr className="border-[var(--color-accent)]/40 w-16 mx-auto mb-8" />
 
-      {/* Bio */}
-      <p className="font-mono text-sm md:text-base leading-relaxed text-[var(--color-text-muted)] text-center mb-16">
-        I'm a junior full stack engineer based in Auckland who works across the
-        stack but feels most at home on the front end. People gravitate toward
-        designs that look and feel good to use, and building interfaces that
-        achieve that is something I find genuinely interesting.
-      </p>
-      <p className="font-mono text-sm md:text-base leading-relaxed text-[var(--color-text-muted)] text-center mb-16">
-        I trained at Dev Academy's full stack bootcamp and have since gained
-        commercial experience as an intern. I enjoy the full journey of building
-        something, from figuring out the architecture to nailing the small
-        details that make an interface feel right.
-      </p>
+      {/* Card */}
+      <div className="border border-[var(--color-border)] rounded-xl p-8 sm:p-10 bg-[var(--color-card)] backdrop-blur-sm">
+        {/* Heading */}
+        <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-6">
+          About Me
+        </h2>
+        {/* Bio */}
+        <p className="font-mono text-sm md:text-base leading-relaxed text-[var(--color-text-muted)] text-center mb-6">
+          I'm a junior full stack engineer based in Auckland who works across
+          the stack but feels most at home on the front end. People gravitate
+          toward designs that look and feel good to use, and building interfaces
+          that achieve that is something I find genuinely interesting.
+        </p>
+        <p className="font-mono text-sm md:text-base leading-relaxed text-[var(--color-text-muted)] text-center mb-6">
+          I trained at Dev Academy's full stack bootcamp and have since gained
+          commercial experience as an intern. I enjoy the full journey of
+          building something, from figuring out the architecture to nailing the
+          small details that make an interface feel right.
+        </p>
+        <p className="font-mono text-sm md:text-base leading-relaxed text-[var(--color-text-muted)] text-center mb-10">
+          Outside of coding I've played guitar most of my life, I'm into
+          tabletop and PC games, and I'm generally drawn to things with a bit of
+          creative grit to them. I think that comes through in how I work. I
+          like building things that have character.
+        </p>
 
-      <p className="font-mono text-sm md:text-base leading-relaxed text-[var(--color-text-muted)] text-center mb-16">
-        Outside of coding I've played guitar most of my life, I'm into tabletop
-        and PC games, and I'm generally drawn to things with a bit of creative
-        grit to them. I think that comes through in how I work. I like building
-        things that have character.
-      </p>
-
-      {/* Technologies */}
-      <p className="font-mono text-lg tracking-[0.3em] uppercase text-[var(--color-accent)] text-center mb-8">
-        Technologies
-      </p>
-      <div className="flex flex-wrap justify-center gap-6">
-        {technologies.map((tech) => (
-          <div
-            key={tech.name}
-            className="flex flex-col items-center gap-2 w-16"
-          >
-            <img
-              src={tech.src}
-              alt={`${tech.name} logo`}
-              className="w-10 h-10 object-contain transition-transform duration-200 hover:scale-110"
-            />
-            <p className="font-mono text-xs text-[var(--color-text-muted)] text-center">
-              {tech.name}
-            </p>
-          </div>
-        ))}
+        {/* Technologies */}
+        <p className="font-mono text-lg tracking-[0.3em] uppercase text-[var(--color-accent)] text-center mb-8">
+          Technologies
+        </p>
+        <div className="flex flex-wrap justify-center gap-6">
+          {technologies.map((tech) => (
+            <div
+              key={tech.name}
+              className="flex flex-col items-center gap-2 w-16"
+            >
+              <img
+                src={tech.src}
+                alt={`${tech.name} logo`}
+                className="w-10 h-10 object-contain transition-transform duration-200 hover:scale-110"
+              />
+              <p className="font-mono text-xs text-[var(--color-text-muted)] text-center">
+                {tech.name}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <hr className="border-[var(--color-border)] mt-20" />
