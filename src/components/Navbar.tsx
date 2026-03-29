@@ -29,9 +29,12 @@ function ThemeToggle() {
         className="relative w-13 h-7 rounded-full border border-[var(--color-accent)] opacity-70 transition-all duration-400 cursor-pointer text-[var(--color-accent)]"
       >
         <span
-          className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-[var(--color-accent)] transition-transform duration-400 ${
-            isDark ? 'translate-x-6' : 'translate-x-0'
-          }`}
+          className="absolute w-4 h-4 rounded-full bg-[var(--color-accent)] transition-transform duration-400"
+          style={{
+            top: '50%',
+            left: '4px',
+            transform: `translateY(-50%) translateX(${isDark ? 'calc(3.25rem - 1rem - 10px)' : '0'})`,
+          }}
         />
       </button>
     </div>

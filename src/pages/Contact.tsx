@@ -51,52 +51,55 @@ export default function Contact(): JSX.Element {
       className="flex flex-col items-center w-full"
       style={{ height: 'calc(100dvh - 340px)' }}
     >
-      <div className="pt-20">
+      <div className="pt-20 w-full max-w-md mx-auto px-4">
         <h2 className="font-serif text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-4 text-center">
           Contact
         </h2>
-        <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-accent)] mb-2 text-center">
-          Get In Touch
-        </p>
-        <hr className="border-[var(--color-accent)]/40 w-16 mx-auto mb-2" />
 
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-accent)]">
-            {EMAIL}
+        <div className="border border-[var(--color-border)] rounded-xl px-10 py-6 bg-[var(--color-card)] backdrop-blur-sm">
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-accent)] mb-6 text-center">
+            Get In Touch
           </p>
-          <button
-            onClick={copyEmail}
-            aria-label="Copy email address"
-            className="text-[var(--color-accent)] opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
-          >
-            {copied ? (
-              <MdCheck className="text-sm" />
-            ) : (
-              <MdContentCopy className="text-sm" />
-            )}
-          </button>
+          <hr className="border-[var(--color-accent)]/40 w-16 mx-auto mb-2" />
+
+          <div className="flex items-center justify-center gap-2 mb-6 mt-6">
+            <p className="font-mono text-xs tracking-[0.3em] uppercase text-[var(--color-accent)]">
+              {EMAIL}
+            </p>
+            <button
+              onClick={copyEmail}
+              aria-label="Copy email address"
+              className="text-[var(--color-accent)] opacity-60 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
+            >
+              {copied ? (
+                <MdCheck className="text-sm" />
+              ) : (
+                <MdContentCopy className="text-sm" />
+              )}
+            </button>
+          </div>
+
+          <hr className="border-[var(--color-accent)]/40 w-16 mx-auto mb-8" />
+
+          <div className="flex flex-col gap-6 items-center">
+            {links.map(({ label, href, icon: Icon, hoverClass, external }) => (
+              <a
+                key={label}
+                href={href}
+                {...(external
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+                aria-label={label}
+                className={`flex items-center gap-4 w-40 text-[var(--color-text)] ${hoverClass} transition-colors duration-200 group`}
+              >
+                <Icon className="text-3xl transition-transform duration-200 group-hover:scale-110 shrink-0" />
+                <span className="font-mono text-lg tracking-widest uppercase">
+                  {label}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
-
-        <hr className="border-[var(--color-accent)]/40 w-16 mx-auto mb-12" />
-      </div>
-
-      <div className="flex flex-col gap-6 flex-1 justify-center">
-        {links.map(({ label, href, icon: Icon, hoverClass, external }) => (
-          <a
-            key={label}
-            href={href}
-            {...(external
-              ? { target: '_blank', rel: 'noopener noreferrer' }
-              : {})}
-            aria-label={label}
-            className={`flex items-center gap-4 text-[var(--color-text-muted)] ${hoverClass} transition-colors duration-200 group`}
-          >
-            <Icon className="text-3xl transition-transform duration-200 group-hover:scale-110" />
-            <span className="font-mono text-lg tracking-widest uppercase">
-              {label}
-            </span>
-          </a>
-        ))}
       </div>
     </section>
   )

@@ -30,7 +30,7 @@ export default function Projects(): JSX.Element {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-[var(--color-text)]">
-      <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12">
+      <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-10">
         Projects
       </h2>
 

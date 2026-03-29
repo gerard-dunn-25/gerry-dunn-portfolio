@@ -8,7 +8,7 @@ export default function ProjectTabs({
   onChange: (tab: Tab) => void
 }) {
   return (
-    <div className="flex justify-center mb-20">
+    <div className="flex justify-center mb-0">
       <div className="flex border border-[var(--color-border)] rounded-full p-2 gap-2">
         {(['personal', 'bootcamp'] as Tab[]).map((tab) => (
           <button
